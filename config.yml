@@ -1,0 +1,59 @@
+default:
+  # 定員
+  slots: 10
+  
+  # 学籍番号の長さ
+  nc: 8
+  
+  # 乱数シード
+  seed: 209304
+  
+  # データフォルダ
+  dir: 
+    student: Data/Students
+    faculty: Data/Faculty
+    out: Data/Admin
+
+  # 学生・教員リスト
+  xls: 
+    student: Data/Admin/students.xlsx
+    faculty: Data/Admin/faculty.xlsx
+
+#-------------------------------------------------
+
+test1:
+  slots: 2
+  seed: 1234
+  nc: 7
+
+  # データフォルダ
+  dir: 
+    student: Data4Test1/Students
+    faculty: Data4Test1/Faculty
+    out: Data4Test1/Admin
+
+  # 学生・教員リスト
+  xls: 
+    student: Data4Test1/Admin/students.xlsx
+    faculty: Data4Test1/Admin/faculty.xlsx
+
+
+#-------------------------------------------------
+  
+test2:
+  slots: 2
+  seed: 1234
+  nc: 7
+
+  # データフォルダ
+  dir: 
+    student: Data4Test2/Students
+    faculty: Data4Test2/Faculty
+    out: Data4Test2/Admin
+
+  # 学生・教員リスト
+  xls: 
+    student: Data4Test2/Admin/students.xlsx
+    faculty: Data4Test2/Admin/faculty.xlsx
+
+  
