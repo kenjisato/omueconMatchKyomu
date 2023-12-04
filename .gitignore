@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+/Data
+/Data*/**/*.csv
+/Data*/**/*.html
+/Data*/**/*.png

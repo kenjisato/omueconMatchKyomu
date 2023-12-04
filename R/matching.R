@@ -177,3 +177,36 @@ p <- ggplot(match_stat, aes(x = Rank)) +
   theme_linedraw()
 ggsave(file.path(config$dir$out, "チェック_マッチ順位.png"), p, dpi = 300, 
        width = 800, height = 480, units = "px")
+
+##=============================================================================
+##【統計情報】マッチ順位on順位付けの数.png
+##=============================================================================
+
+# https://joshuacook.netlify.app/post/integer-values-ggplot-axis/
+integer_breaks <- function(n = 5, ...) {
+  fxn <- function(x) {
+    breaks <- floor(pretty(x, n, ...))
+    names(breaks) <- attr(breaks, "labels")
+    breaks
+  }
+  return(fxn)
+}
+
+num_ranked_profs <- 
+  tibble::as_tibble(colSums(util_st_rounded < 100), 
+                    rownames = "Student") |> 
+  rename(NumRanked = value)
+
+match_stat2 <- match_stat |> 
+  left_join(num_ranked_profs, by = "Student")
+
+q <- ggplot(match_stat2, aes(x = NumRanked, y = Rank)) + 
+  geom_jitter(width = 0.05, height = 0.05, size = 3, alpha = 0.4) + 
+  xlab("Number of seminars ranked") + 
+  ylab("Ranking given to \nassigned seminar") +
+  scale_x_continuous(breaks = integer_breaks()) +
+  scale_y_reverse(breaks = integer_breaks()) +
+  theme_linedraw()
+  
+ggsave(file.path(config$dir$out, "チェック_マッチ順位onランク数.png"), q, dpi = 300, 
+       width = 800, height = 600, units = "px")
