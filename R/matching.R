@@ -13,7 +13,7 @@ library(omueconMatch)
 #
 # "default", "test1" or "test2"
 #
-.config <- "test1"
+.config <- "default"
 
 #################################################
 
