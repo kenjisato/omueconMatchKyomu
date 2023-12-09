@@ -6,13 +6,28 @@
   1. `Data/Admin` に教務事務が管理するゼミリスト(faculty.xlsx) 、学生リスト（students.xlsx）を置いてください。
   1. `Data/Faculty` に NextCloud からダウンロードした教員作成のファイル（[omuid].xlsx）をすべて置いてください。
   1. `Data/Students` に Moodle からダウンロードした学生作成のファイル（[学籍番号....***].xlsx）をすべて置いてください。名前を変更する必要はありません。
-1. `matching.RData` というファイルをダブルクリックして、R を起動します。 
+1. `matching.RData` というファイルをダブルクリック（またはRのショートカットにドラッグ＆ドロップ）して、R を起動します。 
 1. 下のコマンドを順に実行します。
 
+
+
+### マッチング計算からはじめる
+
 ```r
-install.packages("remotes", repos = "https://cloud.r-project.org")
-remotes::install_github("kenjisato/omueconMatch", upgrade = "never")
-source("R/matching.R", encoding = "utf-8")
+source("R/0-setup.R", encoding = "utf-8")
+source("R/1-matching.R", encoding = "utf-8")
+source("R/2-document.R", encoding = "utf-8")
 ```
 
-`Data/Admin` フォルダに結果のファイル、チェック用のファイルが色々と入っていると思います。
+`Data/Admin` フォルダに結果のファイル、チェック用のファイルが色々と入っていると思います。（出力先は `config.yml` で変更可能です）
+
+
+### マッチング計算は完了している
+
+```r
+source("R/0-setup.R", encoding = "utf-8")
+source("R/2-document.R", encoding = "utf-8")
+```
+
+
+

@@ -3,6 +3,8 @@
 .RData
 .Ruserdata
 
+README.html
+
 /Data
 /Data*/**/*.csv
 /Data*/**/*.html
