@@ -18,6 +18,7 @@ default:
   xls: 
     student: Data/Admin/students.xlsx
     faculty: Data/Admin/faculty.xlsx
+    change: Data/Admin/change.xlsx
 
 #-------------------------------------------------
 
@@ -36,6 +37,7 @@ test1:
   xls: 
     student: Data4Test1/Admin/students.xlsx
     faculty: Data4Test1/Admin/faculty.xlsx
+    change: Data4Test1/Admin/change.xlsx
 
 
 #-------------------------------------------------
@@ -55,5 +57,6 @@ test2:
   xls: 
     student: Data4Test2/Admin/students.xlsx
     faculty: Data4Test2/Admin/faculty.xlsx
+    change: Data4Test2/Admin/change.xlsx
 
   

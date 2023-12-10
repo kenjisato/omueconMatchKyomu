@@ -79,7 +79,7 @@ readr::write_excel_csv(.match_table_display,
                        file = file.path(config$dir$out, "マッチ掲示用.csv"))
 
 ##=============================================================================
-##【マッチ掲示用.html】
+##【マッチMoodle用.html】
 ##=============================================================================
 ##
 .template <- readLines(here::here("Template/result.Rmd"))

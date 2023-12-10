@@ -9,3 +9,4 @@ README.html
 /Data*/**/*.csv
 /Data*/**/*.html
 /Data*/**/*.png
+/Data*/**/matching_data.rda
