@@ -38,7 +38,7 @@ if (.Platform$OS.type == "windows") {
 # 設定ファイルの指定
 # "default", "test1" or "test2"
 #
-.config <- "test1"
+.config <- "default"
 
 # 設定ファイル読み込み
 config <- config::get(config = .config)

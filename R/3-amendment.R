@@ -112,7 +112,7 @@ readr::write_excel_csv(.match_table_display_chg,
                        file = file.path(config$dir$out, "修正後_マッチ掲示用.csv"))
 
 ##=============================================================================
-##【マッチMoodle用_修正後.html】
+##【修正後_マッチMoodle用.html】
 ##=============================================================================
 ##
 .template <- readLines(here::here("Template/result.Rmd"))
@@ -170,18 +170,14 @@ readr::write_excel_csv(report_with_id_chg,
 ##=============================================================================
 ##【修正後_空きゼミ一覧.csv】
 ##=============================================================================
-##
 
+.not_full_chg <-
+  .matching_df_chg |> 
+  group_by(教員氏名, Seminar) |> 
+  summarize(空き枠 = config$slots - n(), .groups = "drop") |> 
+  select(教員名 = 教員氏名, 空き枠) |> 
+  filter(空き枠 > 0)
 
-
-.not_full <- 
-  tibble(担当教員 = rownames(util$Student)[result$unmatched.colleges]) |> 
-  group_by(担当教員) |> 
-  summarize(空き枠 = n()) |> 
-  ungroup() |> 
-  left_join(admin$faculty, by = c("担当教員" = "ID")) |> 
-  select(教員名, 空き枠)
-
-readr::write_excel_csv(.not_full, 
+readr::write_excel_csv(.not_full_chg, 
                        file = file.path(config$dir$out, "修正後_空きゼミ一覧.csv"))
 
