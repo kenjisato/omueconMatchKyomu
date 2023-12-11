@@ -24,10 +24,23 @@ source("R/2-document.R", encoding = "utf-8")
 
 ### マッチング計算は完了している
 
+マッチングは完了していて、結果の分析、図の再生成だけしたい場合はこちらです。
+
 ```r
 source("R/0-setup.R", encoding = "utf-8")
 source("R/2-document.R", encoding = "utf-8")
 ```
 
+### 追加募集の反映
 
+追加募集や諸般の事情で1次結果から変更になるケースです。
+`Data/Admin` に教務事務が管理する追加・変更申請者のリスト(change.xlsx) 、を置いてください。change.xlsx は、Student、Seminar、Name の3列構成です。
+それぞれ、学籍番号、配属先教員のID、学生氏名を入力します。
+
+なお、学生氏名は必須ではありません。学生リスト（`students.xlsx`）に記載のない学生のみ必要です。学生リストに記載のある学生の名前は、入力しても無視されます。
+
+```r
+source("R/0-setup.R", encoding = "utf-8")
+source("R/3-amendment.R", encoding = "utf-8")
+```
 
